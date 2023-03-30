@@ -1,0 +1,91 @@
+.mainContainer{
+    display: flex;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+    height: auto;
+    background-color: #262626;
+}
+.container{
+    display: block;
+    padding-left: 20px;
+    padding-bottom: 10px;
+}
+.container p{
+    position:static;
+    text-decoration: none;
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 50;
+    margin-bottom: 10px;
+}
+.subtitle{
+    position: fixed;
+    text-decoration: none;
+    color: #3FA680;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size:small;
+    margin-top: -10px;
+}
+.container button{
+    border-width: 0;
+    width: 305px;
+    height: 30px;
+    margin-top: 20px;
+    margin-bottom: 15px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color:#3FA680;
+    color: white;
+    font-weight: 600;
+}
+.QR{
+    margin: auto;
+    width: 250px;
+    height: 250px;
+    background-color: white;
+}
+input{
+    margin-top: 0;
+    margin-bottom: 20px;
+    width: 300px;
+    height: 25px;
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: #1A1A1A;
+}
+.container li{
+    position:static;
+    list-style-type: none;
+    margin-left: -40px;
+}
+h1{
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 500;
+    position: static;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+h2{
+    display: block;
+    position: static;
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 500;
+    position: static;
+    margin: auto;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+p{
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 200;
+    position: static;
+    margin-top: 5px;
+
+
+}
+
