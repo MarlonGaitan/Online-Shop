@@ -8,5 +8,5 @@
 
 <?php
     $sql="INSERT INTO users_tab(username, email, date_of_birth, password) VALUES ('$email','$username','$pass','$dob')";
-	$result=$connect->query($sql);
+	$result=$conn->query($sql);
 ?>
