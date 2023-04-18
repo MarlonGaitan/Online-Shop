@@ -10,5 +10,5 @@
 
 <?php
     $sql="INSERT INTO `users_tab`(`sid`, `username`, `email`, `date_of_birth`, `password`, `premium`) VALUES (0, '$username','$email','$dob','$pass', 0)";
-	$result=$connect->query($sql);
+	$result=$conn->query($sql);
 ?>
