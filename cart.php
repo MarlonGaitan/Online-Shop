@@ -43,7 +43,7 @@
 	</div>
 	
 	<?php
-		$sql="SELECT * FROM cart_tab where user_name='2'";
+		$sql="SELECT * FROM cart_tab where user_name=$_SESSION[sid]";
 		$result = $conn->query($sql);
 		
 		echo"<center>";
