@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Apr 18, 2023 at 02:26 PM
--- Server version: 5.7.36
--- PHP Version: 7.4.26
+-- Generation Time: Apr 20, 2023 at 02:40 PM
+-- Server version: 5.7.31
+-- PHP Version: 7.3.21
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `online_shopping`
+-- Database: `shopproject_db`
 --
 
 -- --------------------------------------------------------
@@ -36,7 +36,17 @@ CREATE TABLE IF NOT EXISTS `cart_tab` (
   PRIMARY KEY (`sid`),
   KEY `product_id` (`product_name`),
   KEY `user_id` (`user_name`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `cart_tab`
+--
+
+INSERT INTO `cart_tab` (`sid`, `product_name`, `user_name`, `num_of_products`) VALUES
+(1, 1, 1, 1),
+(2, 2, 2, 2),
+(3, 3, 2, 1),
+(4, 1, 2, 1);
 
 -- --------------------------------------------------------
 
