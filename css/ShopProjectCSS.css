@@ -8,17 +8,17 @@
 .headContainer{
   position: static;
   justify-content: center;
-  display: inline-flex;
+  display: flex;
   top: 0;
   right: 0;
   width: 100%;
-  height: auto;
+  height: 69px;
   background-color: #1A1A1A;
 }
 .headContainer input{
   margin-top: 9px;
-  margin-left: 150px;
-  margin-right: 100px;
+  margin-left: 200px;
+  margin-right: 80px;
   width: 600px;
   border-radius: 25px;
   border-width: 0;
@@ -27,8 +27,12 @@
   padding-left: 20px;
   background: #131313;
 }
+.headContainer img[name="logo"]{
+  position: absolute;
+  left: 20px;
+}
 .accountSettings{
-  display: flex;
+  display: block;
   justify-content: center;
   align-items: center;
 }
@@ -69,6 +73,44 @@
   font-size: 18px;
   font-weight: bold;
 }
+.account-pop-up
+{
+	  display:none;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-top: 7px;
+    padding-top: 10px;
+    padding-left: 20px;
+	  position:absolute;
+	  background-color:#1A1A1A;
+    width: 15%;
+	  z-index:100;
+    padding: 10px;
+}
+.account-pop-up a {
+    color: white;
+	  text-decoration: none;
+	  display: block;
+}
+.account-pop-up a:hover{
+    color:#7d2ae8;
+}
+.account:hover .account-pop-up
+{
+	display:block;
+}
+.account-pop-up button {
+  color: white;
+  background-color: #7d2ae8;
+  margin-top: 10px;
+  border-radius: 10px;
+  width: 150px;
+  height: 40px;
+  text-decoration: none;
+  display: block;
+}
+.account-pop-up button:hover{
+  background-color: #9e5af7;
+}
 .numItems{
   justify-content: center;
   display: flex;
@@ -86,6 +128,62 @@
   border-radius: 25px;
   z-index: 1;
 }
+.infoContainer{
+  margin-top: 20px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.infoContainer-content{
+  display: flex;
+  width: 90%;
+  border-style: solid;
+  border-width: 1px;
+  border-color: white;
+  border-radius: 10px;
+}
+.accountInfo{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  margin-left: 20px;
+  margin-top: 70px;
+  margin-bottom: 20px;
+}
+.accountInfo span{
+  font-size: larger;
+  margin-right: 100px;
+}
+.accountInfo .phoneNumber{
+  margin-left: 40px;
+  margin-right: 100px;
+}
+.accountInfo span[name = "CS"]{
+  margin-right: 10px;
+  font-size: large;
+}
+.accountInfo img{
+  margin-right: 50px;
+  width: 150px;
+  -webkit-filter: invert(100%);
+}
+.titleContainer{
+  border-style: solid;
+  border-width: 1px;
+  border-color: #262626;
+  display: block;
+  position: absolute;
+  width: 350px;
+  height: auto;
+  margin-top: -1px;
+  margin-left: -1px;
+  background-color: #262626;
+  z-index: 100;
+}
+
 .numItems a{
   object-fit: contain;
   position:static;
@@ -109,7 +207,6 @@
   width: 500px;
   height: 100%;
   position: relative;
-  background-color: blue;
   margin: 0;
 }
 
