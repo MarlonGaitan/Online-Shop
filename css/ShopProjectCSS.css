@@ -278,7 +278,6 @@
 .slides-text{
 	text-decoration: none;
 }
-
 .swiper{
   width: 100%;
 }
@@ -368,7 +367,7 @@
   display: block;
   padding: 0;
   margin-right: 10px;
-  position: static;
+  position: relative;
   object-fit: cover;
 }
 .column[name = "small"] {
@@ -377,6 +376,7 @@
   margin: 0;
   padding: 0;
   object-fit: contain;
+  position: relative;
 }
 
 .column img {
@@ -390,4 +390,15 @@
   width: auto;
   height: auto;
   object-fit: cover;
+  position: relative;
+}
+
+
+.deal-text{
+	position: absolute;
+	bottom: 8px;
+	left: 16px;
+	padding: 5px;
+	color: white;
+	background-color: red;
 }
