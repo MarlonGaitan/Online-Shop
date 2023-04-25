@@ -2,10 +2,6 @@
 <?php
 	include("db_connection.php");
 
-	//if(($_SESSION['user_ID'] !="F"))
-	//{
-	//echo "You are trying to access a BAD Page. <a href='login.php' >Login Again</a> ";
-	//session_destroy();
 ?>
 <html>
 <head>
@@ -25,22 +21,21 @@
 		$result = mysqli_query($conn, $sql);
 		
 		echo"<center>";
-		echo"<table align = 'center'>";
+		echo"<div class = 'info'>";
 		while($row = $result -> fetch_assoc())
 		{
 			$sql2="SELECT * FROM product_tab where sid= $row[product_name]";
 			$result2 = mysqli_query($conn, $sql2);
 			$row2 = $result2->fetch_assoc();
-			echo "<tr>";
-			echo "<td>";
+			echo "<div>";
 			echo "<img src = $row2[pic]>";
-			echo "</td><td>";
+			echo "</div><div>";
 			echo "$row2[product_name]";
-			echo "<br>";
+			echo "</div><div>";
 			echo "$"."$row2[price]";
-			echo "</td></tr>";
+			echo "</div>";
 		}
-		echo "</table>";
+		echo "</div>";
 		echo "</center>";
 	?>
 	<button type="button" onclick="window.location.href='buy_process.php'">Check Out</button>
