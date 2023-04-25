@@ -59,6 +59,7 @@ session_start();
 				$sql="UPDATE users_tab SET role_id = '2' WHERE sid = $_SESSION[sid]";
 				$result = $conn->query($sql);
 				?>
+				window.location.href = "premium.php";
 			}
 		</script>
 </body>
