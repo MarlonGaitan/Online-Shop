@@ -1,4 +1,7 @@
 <html>
+<?php
+	include("db_connection.php");
+?>
 <head>
 	<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 	<link rel="stylesheet" href="css/ShopProjectCSS.css">
@@ -23,7 +26,7 @@
 								<div class = "account-pop-up-content">
 									<a href="account.php">Account</a>
 									<a onclick="window.location.href='finish_Session.php'">Log Out</a>
-									<button type="button">Become Premium</button>
+									<button type="button" onclick = "goPremium()">Become Premium</button>
 								</div>
 							</div>
 						</div>
@@ -47,6 +50,23 @@
 				};
 				let product_name = localStorage.setItem('productName', selectProductData);
 				window.location.href='product_page.php';
+			}
+			var mysql = require('mysql');
+			var php_var = <?php echo $_SESSION['sid'];?>;
+			
+
+			var con = mysql.createConnection({
+			  host: "localhost",
+			  user: "root",
+			  password: "",
+			  database: "shopproject_db"
+			});
+			
+			function goPremium(){
+				<?php
+				$sql="UPDATE users_tab SET role_id = '2' WHERE sid = $_SESSION[sid]";
+				$result = $conn->query($sql);
+				?>
 			}
 		</script>
 </body>
