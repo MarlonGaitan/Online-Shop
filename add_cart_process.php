@@ -7,7 +7,6 @@
     
 <?php
 include('banner.php');
-session_start();
 $user = $_SESSION['sid'];
 $name = $_POST['name'];
 $products = $_POST['numItems'];

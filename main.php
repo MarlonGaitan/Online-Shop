@@ -13,12 +13,11 @@
 	<body bgcolor="#262626">
 		
 		<?php 
-		session_start();
+		include 'banner.php';
 		if (!isset($_SESSION['sid']) ||(trim ($_SESSION['sid']) == '')){
 			header('location:log_in.php');
 			exit();
 			}else{ ?>
-		<?php include 'banner.php';?>
 		<!-- Slideshow container -->
 		<div class="swiper mySwiper slideshow-container">
 			<div class="swiper-wrapper slideshow-content">

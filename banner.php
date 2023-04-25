@@ -1,5 +1,6 @@
 <html>
 <?php
+session_start();
 	include("db_connection.php");
 ?>
 <head>
@@ -33,7 +34,7 @@
 					</div>
 					<div class="cartBtn" id="cartBtn" onclick="window.location.href='cart.php'">
 						<div class="numItems">
-							<a href="#" id="numIt">0</a>
+							<a href="#" id="numIt" numCart>0</a>
 						</div>
 						<img id="cart" src="favicon_io/android-chrome-192x192.png" alt="cartBtn">
 					</div>
@@ -51,16 +52,7 @@
 				let product_name = localStorage.setItem('productName', selectProductData);
 				window.location.href='product_page.php';
 			}
-			var mysql = require('mysql');
 			var php_var = <?php echo $_SESSION['sid'];?>;
-			
-
-			var con = mysql.createConnection({
-			  host: "localhost",
-			  user: "root",
-			  password: "",
-			  database: "shopproject_db"
-			});
 			
 			function goPremium(){
 				<?php

@@ -10,7 +10,6 @@
     <div class = 'receiptContainer'>
 <?php
 include('banner.php');
-session_start();
 include('db_connection.php');
 $totalPrice = 0;
 $sql="SELECT product_name, num_of_products FROM cart_tab where user_name=$_SESSION[sid]";
@@ -28,6 +27,7 @@ while($row = $result -> fetch_assoc())
 			$totalPrice = ($totalPrice + $row2['price']) * $row['num_of_products'];
 		}
         echo "<div style = 'display:flex; flex-direction:column;'>";
+        if($totalPrice > 0){
         if($_SESSION['role'] == 2){
             echo "<span>Delivery: $20</span>";
             echo "<span>Total Price: $".($totalPrice+20)."</span>";
@@ -37,6 +37,11 @@ while($row = $result -> fetch_assoc())
         echo "<span>Total Price: $".$totalPrice."</span>";
         }
         echo "</div>";
+
+        $sql3="DELETE FROM cart_tab where user_name=$_SESSION[sid]";
+        $result3 = mysqli_query($conn, $sql3);
+        echo "<h1>SUCCESSFULLY CHECKED OUT</h1>";
+    }
 ?>
 </div>
 </body>

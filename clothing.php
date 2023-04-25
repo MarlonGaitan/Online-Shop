@@ -21,27 +21,8 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	</head>
 <body bgcolor="#262626">
-	<div class="mainContainer">
-		<div class="headContainer">
-				<img name="logo" src = "img\logo.png" align = "left">
-				<input type="text" placeholder="Search" id="search" name="search" align = "center">
-				<div class = "account">
-					<a name = "hello" href="#">Hello Again</a>
-					<div class = "accountSettings">
-						<a name = "settings" href="#" style = "margin-right:5px">Account & Settings</a>
-						<img src="img/arrowhead.png" alt="arrowhead">
-					</div>
-					
-				</div>
-				<div class="cartBtn" id="cartBtn">
-					<div class="numItems">
-						<a href="#" id="numIt">0</a>
-					</div>
-					<img src="favicon_io/android-chrome-192x192.png" alt="cartBtn">
-				</div>
-		</div>
-	</div>
 	<?php
+	include('banner.php');
 		$sql="SELECT * FROM product_tab where department='3'";
 		$result = $conn->query($sql);
 		
@@ -50,7 +31,7 @@
 		while($row = $result -> fetch_assoc()){
 			echo "<tr>";
 			echo "<td>";
-			echo "<img src = $row[pic]>";
+			echo "<img src = $row[pic]> ";
 			echo "</td><td>";
 			echo "$row[product_name]";
 			echo "<br>";
