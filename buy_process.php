@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="css/receiptStyle.css">
+    <title>Check Out</title>
 </head>
-<body>
+<body bgcolor="#262626">
     <div class = 'receiptContainer'>
 <?php
 include('banner.php');
@@ -21,14 +22,13 @@ while($row = $result -> fetch_assoc())
 			$row2 = $result2->fetch_assoc();
             echo "<div class = 'product_container' style = 'display:flex; flex-direction:column;'>";
             echo "<span>Product: ".$row2['product_name']."</span>";
-            echo "<span>Price: ".$row2['price']."</span>";
+            echo "<span>Price: $".$row2['price']."</span>";
             echo "<span>Number of Items: ".$row['num_of_products']."</span>";
-            echo "</div>";
 			$totalPrice = ($totalPrice + $row2['price']) * $row['num_of_products'];
 		}
         echo "<div style = 'display:flex; flex-direction:column;'>";
         if($totalPrice > 0){
-        if($_SESSION['role'] == 2){
+        if($_SESSION['role'] == 3){
             echo "<span>Delivery: $20</span>";
             echo "<span>Total Price: $".($totalPrice+20)."</span>";
         }
@@ -37,10 +37,12 @@ while($row = $result -> fetch_assoc())
         echo "<span>Total Price: $".$totalPrice."</span>";
         }
         echo "</div>";
-
+        echo "<h1>SUCCESSFULLY CHECKED OUT</h1>";
+        echo "</div>";
+        
         $sql3="DELETE FROM cart_tab where user_name=$_SESSION[sid]";
         $result3 = mysqli_query($conn, $sql3);
-        echo "<h1>SUCCESSFULLY CHECKED OUT</h1>";
+        
     }
 ?>
 </div>

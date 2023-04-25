@@ -1,8 +1,4 @@
 <!DOCTYPE html>
-<?php
-	include("db_connection.php");
-
-?>
 <html>
 	<head>
 		<!-- ===== Link Swiper's CSS ===== -->

@@ -27,25 +27,36 @@ session_start();
 								<div class = "account-pop-up-content">
 									<a href="account.php">Account</a>
 									<a onclick="window.location.href='finish_Session.php'">Log Out</a>
-									<button type="button" onclick = "goPremium()">Become Premium</button>
+									<button type="button" onclick = "goPremium()" id = "premium">Become Premium</button>
 								</div>
 							</div>
 						</div>
 					</div>
 					<div class="cartBtn" id="cartBtn" onclick="window.location.href='cart.php'">
 						<div class="numItems">
-							<a href="#" id="numIt" numCart>0</a>
+							<span style = "color:white" id="numIt" numCart>0</span>
 						</div>
 						<img id="cart" src="favicon_io/android-chrome-192x192.png" alt="cartBtn">
 					</div>
 			</div>
+			
 		</div>
 		<script src="search_bar.js" defer></script>
 		<script>
+			const cartNum = document.querySelector("[numCart]");
+			$.ajax({
+				url : 'cart_fetch.php', // your php file
+				type : 'GET', // type of the HTTP request
+				success : function(data){
+				let count = jQuery.parseJSON(data);
+				count.map(number => {
+						cartNum.textContent = number.toString();
+				});
+				}
+			})
 			function select(element){
 				let selectProductData = element.textContent;
 				$data =selectProductData;
-				alert($data);
 				var obj = {
 					name: selectProductData
 				};
@@ -56,8 +67,10 @@ session_start();
 			
 			function goPremium(){
 				<?php
+				include('db_connection.php');
 				$sql="UPDATE users_tab SET role_id = '2' WHERE sid = $_SESSION[sid]";
 				$result = $conn->query($sql);
+				$_SESSION['role'] = 2;
 				?>
 				window.location.href = "premium.php";
 			}

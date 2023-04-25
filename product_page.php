@@ -36,9 +36,8 @@
             <span product-rating></span>
             </div>
             <div class = "buy">
-             <button type="submit" product-buy>Add to Cart</button>
+             <button id="addCart" type="submit" onclick = "cartNumberChange()" product-buy>Add to Cart</button>
             </div>
-            <div>Response from server: <span id="response"></span></div>
 		</div>
 	</template>
     <script type="text/javascript">
@@ -52,21 +51,15 @@
         let obj = jQuery.parseJSON(data);
         products_ = obj.map(product => {
             if(product[0] == localStorage.getItem('productName')){
-                alert(product);
                 const cards = productTemp.content.cloneNode(true).children[0];
-                console.log(cards);
                 const name = cards.querySelector("[product-name]");
-                name.textContent = product[0].toString();
-                console.log(name);
+                name.textContent = "Product Name: " + product[0].toString();
                 const price = cards.querySelector("[product-price]");
-                price.textContent = product[1].toString();
-                console.log(price);
+                price.textContent = "Price: $" + product[1].toString();
                 const picture = cards.querySelector("[product-picture]");
                 picture.innerHTML = "<img src = '"+product[3].toString()+"'></img>";
-                console.log(picture);
                 const rating = cards.querySelector("[product-rating]");
-                rating.textContent = product[2].toString();
-                console.log(rating);
+                rating.textContent = "Rating: " + product[2].toString();
                 const sid = cards.querySelector("[inputname]");
                 sid.value = product[4].toString();
                 productCont.append(cards);
@@ -75,7 +68,10 @@
         });
         }
     })
-    
+const cartNumber = document.querySelector("[numCart]");
+  function cartNumberChange(){
+    $('#numIt').text('1');
+}
     function retreiveValue(){
             var value = $('#productName').val();
             $.post('product_page.php',{'data': value}, function (data) {

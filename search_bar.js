@@ -1,11 +1,11 @@
 const productTemplate = document.querySelector("[data-product-template]");
 const productContainer = document.querySelector("[data-product-container]");
 const searchbox = document.querySelector("[data-search]");
-const cartNumber = document.querySelector("[numCart]");
 const inputbox = document.getElementById("search");
 let dat = [];
 let result = [];
 let products = [];
+
 $.ajax({
     url : 'product_fetch.php', // your php file
     type : 'GET', // type of the HTTP request
@@ -13,7 +13,6 @@ $.ajax({
        let obj = jQuery.parseJSON(data);
        products = obj.map(product => {
             const card = productTemplate.content.cloneNode(true).children[0];
-            console.log(card);
             const body = card.querySelector("[data-body]");
             body.textContent = product[0].toString();
             productContainer.append(card);
@@ -27,14 +26,6 @@ $.ajax({
        }
     }
  })
- $.ajax({
-  url : 'cart_fetch.php', // your php file
-  type : 'GET', // type of the HTTP request
-  success : function(data){
-    alert(data);
-    cartNumber.textContent = data;
-}
-})
 
  searchbox.addEventListener("input", e =>{
    const value  = e.target.value.toLowerCase();

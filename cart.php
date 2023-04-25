@@ -15,13 +15,13 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	</head>
 <body bgcolor="#262626">
+<div class = 'info'>
 	<?php
 		include("banner.php");
 		$sql="SELECT * FROM cart_tab where user_name=$_SESSION[sid]";
 		$result = mysqli_query($conn, $sql);
 		
 		echo"<center>";
-		echo"<div class = 'info'>";
 		while($row = $result -> fetch_assoc())
 		{
 			$sql2="SELECT * FROM product_tab where sid= $row[product_name]";
@@ -30,14 +30,14 @@
 			echo "<div>";
 			echo "<img src = $row2[pic]>";
 			echo "</div><div>";
-			echo "$row2[product_name]";
+			echo "Product: $row2[product_name]";
 			echo "</div><div>";
-			echo "$"."$row2[price]";
+			echo "Price: $"."$row2[price]";
 			echo "</div>";
 		}
-		echo "</div>";
 		echo "</center>";
 	?>
 	<button type="button" onclick="window.location.href='buy_process.php'">Check Out</button>
+	</div>
 </body>
 </html>

@@ -21,7 +21,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	</head>
 <body bgcolor="#262626">
-	
+	<div class = 'list'>
 	<?php
 		$sql="SELECT * FROM product_tab where department='1'";
 		$result = $conn->query($sql);
@@ -33,13 +33,14 @@
 			echo "<td>";
 			echo "<img src = $row[pic]>";
 			echo "</td><td>";
-			echo "$row[product_name]";
+			echo "<span>$row[product_name]</span>";
 			echo "<br>";
-			echo "$"."$row[price]";
+			echo "<span>$"."$row[price]</span>";
 			echo "</td></tr>";			
 		}
 		echo "</table>";
 		echo "</center>";			
 	?>
+	</div>
 </body>
 </html>

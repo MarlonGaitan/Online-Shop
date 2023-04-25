@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Document</title>
+    <title>Cart</title>
+    <link rel="stylesheet" href="css/receiptStyle.css">
 </head>
-<body>
-    
+<body bgcolor="#262626">
 <?php
 include('banner.php');
 $user = $_SESSION['sid'];
@@ -17,4 +17,7 @@ $result=$conn->query($sql);
 ?>
     <h1>SUCCESFULLY ADDED TO CART!</h1>
 </body>
+<script type="text/javascript">
+
+</script>
 </html>

@@ -7,12 +7,12 @@
 </head>
 <body bgcolor = "#262626">
     <?php 
-    session_start();
+    include 'banner.php';
     if (!isset($_SESSION['sid']) ||(trim ($_SESSION['sid']) == '')){
         header('location:log_in.php');
         exit();
         }else{ 
-    include 'banner.php';?>
+    ?>
     <div class = "infoContainer">
         <div class = "infoContainer-content">
             <div class="titleContainer">
