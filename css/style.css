@@ -5,14 +5,24 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 50%;
-    height: auto;
+    width: 30%;
+    height: 100%;
+    justify-content: center;
     background-color: #262626;
+    padding: 20px;
+}
+.container-head{
+    width: 100%;
+    padding-left: 90px;
+    height: auto;
 }
 .container{
-    display: block;
-    padding-left: 20px;
-    padding-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
 }
 .container p{
     position:static;
@@ -22,13 +32,21 @@
     font-size: 50;
     margin-bottom: 10px;
 }
+.subtitle[name="captcha"]{
+    margin-top:10px
+}
 .subtitle{
     position: fixed;
     text-decoration: none;
-    color: #3FA680;
+    color: #7d2ae8;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size:small;
     margin-top: -10px;
+}
+.error{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: small;
+    color: red;
 }
 .container button{
     border-width: 0;
@@ -37,15 +55,32 @@
     margin-top: 20px;
     margin-bottom: 15px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    background-color:#3FA680;
+    background-color:#7d2ae8;
     color: white;
     font-weight: 600;
 }
-.QR{
-    margin: auto;
-    width: 250px;
-    height: 250px;
-    background-color: white;
+.captcha_container{
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.captcha-content{
+    width: 100%;
+    height: auto;
+    display: block;
+}
+.captcha-content img{
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+input[name = "vercode"]{
+    margin-top: 10px;
+    margin-bottom: 0;
+    width: auto;
+    height: 25px;
 }
 input{
     margin-top: 0;

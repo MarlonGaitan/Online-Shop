@@ -3,7 +3,6 @@
 	<head>
 		<!-- ===== Link Swiper's CSS ===== -->
 		<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
-		<script src="js/ShopProjectjs.js"></script>
 		<link rel="stylesheet" href="css/ShopProjectCSS.css">
 		<link rel="icon" type="image/png" sizes="32x32" href="favicon_io/favicon-32x32.png">
 		<link rel="icon" type="image/png" sizes="16x16" href="favicon_io/favicon.ico">
@@ -12,6 +11,13 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	</head>
 	<body bgcolor="#262626">
+		
+		<?php 
+		session_start();
+		if (!isset($_SESSION['sid']) ||(trim ($_SESSION['sid']) == '')){
+			header('location:log_in.php');
+			exit();
+			}else{ ?>
 		<?php include 'banner.php';?>
 		<!-- Slideshow container -->
 		<div class="swiper mySwiper slideshow-container">
@@ -142,7 +148,7 @@
 				<div class = "trend">
 					<img name = "small" src="img/testItem.png" style="width:100%">
 				</div>
-			</div>		  
+			</div>	
 		</div>
 		</div>
 		</div>
@@ -165,6 +171,6 @@
       },
     });
   </script>
-		
+		<?php } ?>
 	</body>
 </html>

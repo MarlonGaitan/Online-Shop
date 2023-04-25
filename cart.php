@@ -12,7 +12,6 @@
 <head>
 		<!-- ===== Link Swiper's CSS ===== -->
 		<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
-		<script src="js/ShopProjectjs.js"></script>
 		<link rel="stylesheet" href="css/ShopProjectCSS.css">
 		<link rel="icon" type="image/png" sizes="32x32" href="favicon_io/favicon-32x32.png">
 		<link rel="icon" type="image/png" sizes="16x16" href="favicon_io/favicon.ico">
@@ -21,37 +20,17 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	</head>
 <body bgcolor="#262626">
-	<div class="mainContainer">
-		<div class="headContainer">
-				<img name="logo" src = "img\logo.png" align = "left">
-				<input type="text" placeholder="Search" id="search" name="search" align = "center">
-				<div class = "account">
-					<a name = "hello" href="#">Hello Again</a>
-					<div class = "accountSettings">
-						<a name = "settings" href="#" style = "margin-right:5px">Account & Settings</a>
-						<img src="img/arrowhead.png" alt="arrowhead">
-					</div>
-					
-				</div>
-				<div class="cartBtn" id="cartBtn">
-					<div class="numItems">
-						<a href="#" id="numIt">0</a>
-					</div>
-					<img src="favicon_io/android-chrome-192x192.png" alt="cartBtn">
-				</div>
-		</div>
-	</div>
-	
 	<?php
+		include("banner.php");
 		$sql="SELECT * FROM cart_tab where user_name=$_SESSION[sid]";
-		$result = $conn->query($sql);
+		$result = mysqli_query($conn, $sql);
 		
 		echo"<center>";
 		echo"<table align = 'center'>";
 		while($row = $result -> fetch_assoc())
 		{
-			$sql2="SELECT * FROM product_tab where sid='$row[product_name]'";
-			$result2 = $conn->query($sql2);
+			$sql2="SELECT * FROM product_tab where sid= $row[product_name]";
+			$result2 = mysqli_query($conn, $sql2);
 			$row2 = $result2->fetch_assoc();
 			echo "<tr>";
 			echo "<td>";

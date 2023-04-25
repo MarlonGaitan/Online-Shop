@@ -6,14 +6,20 @@
     <title>Account & Settings</title>
 </head>
 <body bgcolor = "#262626">
-    <?php include 'banner.php';?>
+    <?php 
+    session_start();
+    if (!isset($_SESSION['sid']) ||(trim ($_SESSION['sid']) == '')){
+        header('location:log_in.php');
+        exit();
+        }else{ 
+    include 'banner.php';?>
     <div class = "infoContainer">
         <div class = "infoContainer-content">
             <div class="titleContainer">
                 <h1 style="color:white;">Account Information</h1>
             </div>
     <?php
-        session_start();
+        
         $uname = ($_SESSION['username']);
         include("db_connection.php");
 		$sql="SELECT * FROM users_tab where username = '$uname'";
@@ -75,5 +81,6 @@
         </div>
         
     </div>
+    <?php } ?>
 </body>
 </html>

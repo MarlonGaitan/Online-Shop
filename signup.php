@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<script src="js/ShopProjectjs.js"></script>
-		<link rel="stylesheet" href="css/ShopProjectCSS.css">
+		<link rel="stylesheet" href="css/style.css">
 	</head>
 	<body>
 		<div class = "mainContainer">

@@ -5,6 +5,24 @@
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
 }
+.hide{
+  display: none;
+}
+.product-container
+{
+	  display:none;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-top: 60px;
+    margin-right: 150px;
+    padding-top: 10px;
+    padding-left: 20px;
+	  position:absolute;
+	  background-color:#1A1A1A;
+    width: 45%;
+	  z-index:100;
+    padding: 10px;
+}
 .headContainer{
   position: static;
   justify-content: center;
