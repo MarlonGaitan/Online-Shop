@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <?php
-	session_start();
 	include("db_connection.php");
 
 	//if(($_SESSION['user_ID'] !="F"))
