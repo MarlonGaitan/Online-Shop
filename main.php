@@ -105,27 +105,33 @@
 		<div class="slideshow-content" style = "display:flex; height:auto">
 		<div class="row">
 			<div class="column" name = "big" >
-				<img name = "big" src="img/testItem.png" style="width:100%">
+				<img name = "big" src="img/windbreaker.jpg" style="width:100%">
+				<div class = "deal-text"><p>35% off</p></div>
 			</div>
 			<div class="column" name = "small">
 				<div class = "trend">
-					<img name = "small" src="img/testItem.png" style="width:100%">
+					<img name = "small" src="img/hammock.webp" style="width:100%">
+					<div class = "deal-text"><p>10% off</p></div>
 				</div>
 				<div class = "trend">
-					<img name = "small" src="img/testItem.png" style="width:100%">
+					<img name = "small" src="img/hoop.webp" style="width:100%">
+					<div class = "deal-text">5% off</div>
 				</div>
 			</div>
 		</div>
 		<div class="row">
 			<div class="column" name = "big" >
-				<img name = "big" src="img/testItem.png" style="width:100%">
+				<img name = "big" src="img/cathut.jfif" style="width:100%">
+				<div class = "deal-text">40% off</div>
 			</div>
 			<div class="column" name = "small">
 				<div class = "trend">
-					<img name = "small" src="img/testItem.png" style="width:100%">
+					<img name = "small" src="img/catbed.jfif" style="width:100%">
+					<div class = "deal-text">5% off</div>
 				</div>
 				<div class = "trend">
-					<img name = "small" src="img/testItem.png" style="width:100%">
+					<img name = "small" src="img/chair.webp" style="width:100%">
+					<div class = "deal-text">10% off</div>
 				</div>
 			</div>	
 		</div>
