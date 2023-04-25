@@ -1,12 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
     <link rel="stylesheet" href="css/product_style.css">
     <title>Document</title>
 </head>
 <body bgcolor="#262626">
     <?php include('banner.php') ?>
+    <form action="add_cart_process.php" method="POST">
     <div class = "product-contain" id = "product-container" product-container></div>
+    </form>
 	<template product-template>
 		<div class = "info">
         <div class = "picture">
@@ -14,15 +17,26 @@
             </div>
 			<div class = "name">
             <span id="productName" product-name></span>
+            <input style = "display:none"type="text" name="name" id="name" inputname/>
             </div>
             <div class = "price">
             <span product-price></span>
+            </div>
+            <div>
+            <input list="numItems" placeholder="Number of Items" name = 'numItems'>
+            <datalist id="numItems">
+                <option value="1"></option>
+                <option value="2"></option>
+                <option value="3"></option>
+                <option value="4"></option>
+                <option value="5"></option>
+            </datalist>
             </div>
             <div class = "rating">
             <span product-rating></span>
             </div>
             <div class = "buy">
-             <button type="button" onclick="retreiveValue()" product-buy>Buy Now</button>
+             <button type="submit" product-buy>Add to Cart</button>
             </div>
             <div>Response from server: <span id="response"></span></div>
 		</div>
@@ -53,26 +67,21 @@
                 const rating = cards.querySelector("[product-rating]");
                 rating.textContent = product[2].toString();
                 console.log(rating);
-
+                const sid = cards.querySelector("[inputname]");
+                sid.value = product[4].toString();
                 productCont.append(cards);
             }
                 
         });
         }
     })
+    
     function retreiveValue(){
-            let value = document.getElementById('productName').textContent;
-            $.post('product_page.php',{'data': "value"}, function (data) {
-        $('#response').text(data);
+            var value = $('#productName').val();
+            $.post('product_page.php',{'data': value}, function (data) {
+        console.log(JSON.parse(data));
     }); 
         }
     </script>
-    <?php 
-    if (isset($_POST['data'])) { 
-        $data = $_POST['data']; 
-        echo( "data is: $data" ); 
-        return; 
-    } 
-?> 
 </body>
 </html>

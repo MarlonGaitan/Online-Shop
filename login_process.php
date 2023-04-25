@@ -18,6 +18,7 @@ if(isset($_POST['username']) && isset($_POST['password'])){
     if(mysqli_num_rows($result) === 1){
         $row = mysqli_fetch_assoc($result);
         if($row['username'] === $uname && $row['password'] === $pswd){
+            $_SESSION['role'] = $row['role_id'];
             $_SESSION['sid'] = $row['sid'];
             header("Location: main.php");
         }

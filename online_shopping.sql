@@ -27,7 +27,6 @@ SET time_zone = "+00:00";
 -- Table structure for table `cart_tab`
 --
 
-DROP TABLE IF EXISTS `cart_tab`;
 CREATE TABLE IF NOT EXISTS `cart_tab` (
   `sid` int(11) NOT NULL AUTO_INCREMENT,
   `product_name` int(11) NOT NULL,
@@ -54,7 +53,6 @@ INSERT INTO `cart_tab` (`sid`, `product_name`, `user_name`, `num_of_products`) V
 -- Table structure for table `department_tab`
 --
 
-DROP TABLE IF EXISTS `department_tab`;
 CREATE TABLE IF NOT EXISTS `department_tab` (
   `sid` int(11) NOT NULL AUTO_INCREMENT,
   `department_code` varchar(20) NOT NULL,
@@ -80,7 +78,6 @@ INSERT INTO `department_tab` (`sid`, `department_code`, `department_name`) VALUE
 -- Table structure for table `product_tab`
 --
 
-DROP TABLE IF EXISTS `product_tab`;
 CREATE TABLE IF NOT EXISTS `product_tab` (
   `sid` int(11) NOT NULL AUTO_INCREMENT,
   `product_name` varchar(20) NOT NULL,
@@ -166,7 +163,6 @@ INSERT INTO `product_tab` (`sid`, `product_name`, `price`, `description`, `rate`
 -- Table structure for table `role_tab`
 --
 
-DROP TABLE IF EXISTS `role_tab`;
 CREATE TABLE IF NOT EXISTS `role_tab` (
   `sid` int(11) NOT NULL AUTO_INCREMENT,
   `role` varchar(10) NOT NULL DEFAULT 'customer',
@@ -187,7 +183,6 @@ INSERT INTO `role_tab` (`sid`, `role`) VALUES
 -- Table structure for table `users_tab`
 --
 
-DROP TABLE IF EXISTS `users_tab`;
 CREATE TABLE IF NOT EXISTS `users_tab` (
   `sid` int(11) NOT NULL AUTO_INCREMENT,
   `username` varchar(20) NOT NULL,

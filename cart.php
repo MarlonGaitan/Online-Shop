@@ -40,10 +40,10 @@
 			echo "<br>";
 			echo "$"."$row2[price]";
 			echo "</td></tr>";
-			
 		}
 		echo "</table>";
 		echo "</center>";
 	?>
+	<button type="button" onclick="window.location.href='buy_process.php'">Check Out</button>
 </body>
 </html>
