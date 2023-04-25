@@ -26,70 +26,65 @@
 		  		<div class="swiper-slide mySlides fade">
 					<div class="mySlides-content">
 						<div class="image">
-							<img src="img/electronics.jpg">
+							<a href = "electronics.php"><img src="img/electronics.jpg"></a>
 						</div>				
 						<div class="text">
-							<span>Electronics</span>	
+							<span><a href = "electronics.php">Electronics</a></span>	
 						</div>
 					</div>
 				</div>
 				<div class="swiper-slide mySlides fade">
 					<div class="mySlides-content">
 						<div class="image">
-							<img src="img/books.jpg">
+							<a href = "books.php"><img src="img/books.jpg"></a>
 						</div>				
 						<div class="text">
-							<span>Books</span>	
+							<span><a href = "books.php">Books</a></span>	
 						</div>
 					</div>
 				</div>
 				<div class="swiper-slide mySlides fade">
 					<div class="mySlides-content">
 						<div class="image">
-							<img src="img/clothing.jpg">
+							<a href = "clothing.php"><img src="img/clothing.jpg"></a>
 						</div>				
 						<div class="text">
-							<span>Clothing</span>	
+							<span><a href = "clothing.php">Clothing</a></span>	
 						</div>
 					</div>
 				</div>
 				<div class="swiper-slide mySlides fade">
 					<div class="mySlides-content">
 						<div class="image">
-							<img src="img/outdoors.jpg">
+							<a href = "outdoors.php"><img src="img/outdoors.jpg"></a>
 						</div>				
 						<div class="text">
-							<span>Outdoors</span>	
+							<span><a href = "outdoors.php">Outdoors</a></span>	
 						</div>
 					</div>
 				</div>
 				<div class="swiper-slide mySlides fade">
 					<div class="mySlides-content">
 						<div class="image">
-							<img src="img/sports.jpg">
+							<a href = "sports.php"><img src="img/sports.jpg"></a>
 						</div>				
 						<div class="text">
-							<span>Sports</span>	
+							<span><a href = "sports.php">Sports</a></span>	
 						</div>
 					</div>
 				</div>
 				<div class="swiper-slide mySlides fade">
 					<div class="mySlides-content">
 						<div class="image">
-							<img src="img/pets.jpg">
+							<a href = "petsupplies.php"><img src="img/pets.jpg"></a>
 						</div>				
 						<div class="text">
-							<span>Pet Supplies</span>	
+							<span><a href = "petsupplies.php">Pet Supplies</a></span>	
 						</div>
 					</div>
 				</div>
 
-				<!-- The dots/circles -->
-				<!-- <div class = "three-dots" style="text-align:center">
-					<span class="dot" onclick="currentSlide(1)"></span>
-					<span class="dot" onclick="currentSlide(2)"></span>
-					<span class="dot" onclick="currentSlide(3)"></span>
-				</div> -->
+				
 				
 		  </div>
 		  	<div class="swiper-button-next"></div>
@@ -102,23 +97,7 @@
 
 		
 		
-		<?php
-			// include ("db_connection.php");
-
-            // $sql = "SELECT * FROM product_tab";
-            // $result = $conn->query($sql);
-            // while($row = $result->fetch_assoc())
-            // {
-            //     echo "<div class = 'content'>";
-            //     echo "<a href = '#'>".$row['product_name']."</a><br>";
-            //     echo "<img src = '".$row['pic']."'/><br>";
-            //     echo "<div class = 'info-contain'>";
-            //     echo "<a href = '#'>Price: ".$row['price']."</a><br>";
-            //     echo "<button>Buy</button>";
-            //     echo "</div>";
-            //     echo "</div>";
-            // }
-		?>
+		
 		<div style = "display:flex;flex-direction:column; align-items:center; width:100%; margin-top:45px">
 		<h1 class = "deals" style="color:white;">Amazing Deals!</h1>
 		<div class="slideshow-container" style = "justify-content: center;">
