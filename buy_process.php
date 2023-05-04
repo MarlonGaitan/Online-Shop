@@ -20,11 +20,24 @@ while($row = $result -> fetch_assoc())
 			$sql2="SELECT product_name, price FROM product_tab where sid = $row[product_name]";   
 			$result2 = mysqli_query($conn, $sql2);
 			$row2 = $result2->fetch_assoc();
-            echo "<div class = 'product_container' style = 'display:flex; flex-direction:column;'>";
+            echo "<table style = ' width:500px; border-bottom: 2px solid white;margin-bottom:50px'>";
+            echo "<tr>";
+            echo "<td>";
             echo "<span>Product: ".$row2['product_name']."</span>";
+            echo "</td>";
+            echo "</tr>";
+            echo "<tr>";
+            echo "<td>";
             echo "<span>Price: $".$row2['price']."</span>";
+            echo "</td>";
+            echo "</tr>";
+            echo "<tr>";
+            echo "<td>";
             echo "<span>Number of Items: ".$row['num_of_products']."</span>";
 			$totalPrice = ($totalPrice + $row2['price']) * $row['num_of_products'];
+            echo "</td>";
+            echo "</tr>";
+            echo "</table>";
 		}
         echo "<div style = 'display:flex; flex-direction:column;'>";
         if($totalPrice > 0){
@@ -38,7 +51,6 @@ while($row = $result -> fetch_assoc())
         }
         echo "</div>";
         echo "<h1>SUCCESSFULLY CHECKED OUT</h1>";
-        echo "</div>";
         
         $sql3="DELETE FROM cart_tab where user_name=$_SESSION[sid]";
         $result3 = mysqli_query($conn, $sql3);

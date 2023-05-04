@@ -6,13 +6,7 @@
 <html>
 <head>
 		<!-- ===== Link Swiper's CSS ===== -->
-		<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
-		<link rel="stylesheet" href="css/ShopProjectCSS.css">
-		<link rel="icon" type="image/png" sizes="32x32" href="favicon_io/favicon-32x32.png">
-		<link rel="icon" type="image/png" sizes="16x16" href="favicon_io/favicon.ico">
-		<link rel="manifest" href="favicon_io/site.webmanifest">
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="css/product_style.css">
 	</head>
 <body bgcolor="#262626">
 <div class = 'info'>
@@ -27,11 +21,11 @@
 			$sql2="SELECT * FROM product_tab where sid= $row[product_name]";
 			$result2 = mysqli_query($conn, $sql2);
 			$row2 = $result2->fetch_assoc();
-			echo "<div>";
+			echo "<div class = 'cart_image'>";
 			echo "<img src = $row2[pic]>";
 			echo "</div><div>";
 			echo "Product: $row2[product_name]";
-			echo "</div><div>";
+			echo "</div><div style = 'width:500px;margin-bottom: 10px; border-bottom: 2px solid white'>";
 			echo "Price: $"."$row2[price]";
 			echo "</div>";
 		}

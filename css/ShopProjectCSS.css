@@ -390,12 +390,6 @@
   position: relative;
 }
 
-.column img {
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
-}
-
 .column[name="small"] .trend{
   display: block;
   width: auto;
